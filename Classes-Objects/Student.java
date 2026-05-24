@@ -13,10 +13,7 @@ class Student{
                 System.out.println("Age: " + age);
                 System.out.println();
         }
-
-}
-
-public class Main {
+	
 	
 	public static void main(String[] args) {
 		
