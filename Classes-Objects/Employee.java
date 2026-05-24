@@ -12,11 +12,8 @@ class Employee {
         System.out.println(name + " " + salary);
     }
 
-}
-
-public class Main {
     
-    public static void main(String[] args){
+ public static void main(String[] args){
 
         Employee e1 = new Employee("Rahul", 30000);
         Employee e2 = new Employee("Aman", 45000);
