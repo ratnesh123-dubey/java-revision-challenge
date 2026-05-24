@@ -1,4 +1,4 @@
-public class Mobile {
+class Mobile {
     
 String  brand;
 int price;
@@ -12,6 +12,10 @@ void display(){
     System.out.println(brand + " " + price );
 }
 
+}
+
+public class Main {
+    
 public static void main(String[] args){
       Mobile m1 = new Mobile("Samsung",25000);
       Mobile m2 = new Mobile("iPhone", 80000);
