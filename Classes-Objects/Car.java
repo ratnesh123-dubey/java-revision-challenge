@@ -11,12 +11,9 @@ class Car{
         void display(){
                 System.out.println(brand + " " + color);
         }
-
-}
-
-public class Main {
 	
-	public static void main(String[] args) {
+	
+ public static void main(String[] args) {
 		
 		Car c1 = new Car("BMW", "Black");
 		Car c2 = new Car("Audi", "White");
