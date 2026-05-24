@@ -1,4 +1,4 @@
-public class BankAccount {
+class BankAccount {
     
     String accountHolder;
     int balance;
@@ -20,12 +20,18 @@ public class BankAccount {
            System.out.println("accountHolder: " + accountHolder);
            System.out.println("balance: " + balance);
      }
+    
+}
 
+public class Main {
+    
    public static void main(String[] args){
 
     BankAccount b1 = new BankAccount("Ratnesh", 1000);
     b1.deposit(500);
     b1.withdraw(200);
     b1.display();
+       
    }
+    
 }
