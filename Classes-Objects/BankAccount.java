@@ -21,11 +21,8 @@ class BankAccount {
            System.out.println("balance: " + balance);
      }
     
-}
-
-public class Main {
     
-   public static void main(String[] args){
+  public static void main(String[] args){
 
     BankAccount b1 = new BankAccount("Ratnesh", 1000);
     b1.deposit(500);
