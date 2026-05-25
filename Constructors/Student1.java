@@ -19,6 +19,9 @@ public class Student1 {
     public static void main(String[] args){
 
         Student1 s1 = new Student1("Rahul", 101, 88);
+        Student1 s2 = new Student1("Ratnesh", 102, 89);
         s1.showDetails();
+        s2.showDetails();
+        
     }
 }
