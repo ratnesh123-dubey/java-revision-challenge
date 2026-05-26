@@ -24,9 +24,7 @@ class Employee {
         System.out.println("Salary: " + salary);
         System.out.println();
     }
-}
 
-public class Main {
     public static void main(String[] args) {
 
         // Original Object
