@@ -1,0 +1,42 @@
+class BankAccount {
+
+    private String name;
+    private double balance;
+
+    String getName(){
+        return name;
+    }
+
+    void setName(String name){
+        this.name = name;
+    }
+
+    double getBalance(){
+        return balance;
+    }
+
+    void setBalance(double balance){
+
+        if(balance>=0){
+            this.balance = balance;
+        }
+        else{
+            System.out.println("Invalid");
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+
+        BankAccount b = new BankAccount();
+
+        b.setName("Ratnesh");
+
+        b.setBalance(5000);
+
+        System.out.println(b.getName());
+        System.out.println(b.getBalance());
+    }
+  
+}
