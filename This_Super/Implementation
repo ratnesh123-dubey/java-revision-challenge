@@ -1,0 +1,38 @@
+class Bank {
+
+    String bankName = "State Bank of India";
+
+    Bank() {
+        System.out.println("Bank Constructor");
+    }
+}
+
+class BankAccount extends Bank {
+
+    String bankName;
+    double balance;
+
+    BankAccount(String bankName, double balance) {
+
+        super(); // Parent constructor call
+
+        this.bankName = bankName; // Current class variable
+        this.balance = balance;
+    }
+
+    void display() {
+
+        System.out.println("Account Bank : " + this.bankName);
+        System.out.println("Parent Bank  : " + super.bankName);
+        System.out.println("Balance      : " + this.balance);
+    }
+
+
+    public static void main(String[] args) {
+
+        BankAccount account =
+                new BankAccount("HDFC Bank", 5000);
+
+        account.display();
+    }
+}
