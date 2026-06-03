@@ -1,0 +1,71 @@
+public class Account{
+
+     String accountHolder;
+     double balance;
+
+     Account(String accountHolder, double balance){
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+     }
+
+     void displayAccountDetails(){
+        System.out.println("AccountHolder: " + accountHolder);
+        System.out.println("Balance :" +balance);
+     }
+
+
+     public static void main(String[] args){
+
+    SavingsAccount s = new SavingsAccount("Ratnesh", 500, 2);
+    s.displayAccountDetails();
+    s.showInterestRates();
+    System.out.println();
+
+    CurrentAccount c = new CurrentAccount("Ratnesh", 500, 200);
+    c.displayAccountDetails();
+    c.showOverdraftLimit();
+
+
+
+}
+
+}
+
+
+class SavingsAccount extends Account{
+
+    double interestRate;
+
+    SavingsAccount(String accountHolder, double balance, double interestRate){
+       super(accountHolder, balance);
+       this.interestRate = interestRate;
+    }
+
+    void showInterestRates(){
+         System.out.println("Interest rates: " + interestRate + "%");
+    }
+
+}
+
+
+class CurrentAccount extends Account{
+      double overdraftlimit;
+
+      CurrentAccount(String accountolder, double balance, double overdraftlimit){
+            super(accountolder, balance);
+            this.overdraftlimit = overdraftlimit;
+      }
+
+      void showOverdraftLimit(){
+        System.out.println("Overdraft Limit: " +overdraftlimit );
+      }
+
+}
+
+
+
+
+
+
+
+
