@@ -1,0 +1,51 @@
+abstract class BankAccount{
+
+    String accountHolder;
+
+    BankAccount(String accountHolder){
+        this.accountHolder = accountHolder;
+    }
+
+    abstract void withdraw(double amount);
+
+    void display(){
+        System.out.println("Account Holder : " + accountHolder);
+    }
+
+    public static void main(String[] args) {
+        
+       BankAccount b = new SavingsAccount("Ratnesh");
+       b.display();
+       b.withdraw(500);
+
+    }
+
+}
+
+ 
+class SavingsAccount extends BankAccount{
+
+    SavingsAccount(String accountHolder){
+        super(accountHolder);
+    }
+
+     @Override
+    void withdraw(double amount){
+        System.out.println("Withdraw " + amount + " from balance");
+    } 
+    
+}
+
+
+class CurrentAccount extends BankAccount{
+
+    CurrentAccount(String accountHolder){
+        super(accountHolder);
+    }
+
+    @Override
+    void withdraw(double amount){
+        System.out.println("Withdraw: " + amount + "from balance");
+    }
+
+}
