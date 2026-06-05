@@ -1,0 +1,39 @@
+class Employee {
+
+    private int empId = 101;
+    String department = "IT";      // Default
+    protected double salary = 50000;
+    public String company = "TCS";
+
+    void display() {
+
+        System.out.println("Emp Id: " + empId);
+        System.out.println("Department: " + department);
+        System.out.println("Salary: " + salary);
+        System.out.println("Company: " + company);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Employee e = new Employee();
+
+        // Private directly access nahi hoga
+        // System.out.println(e.empId);
+
+        // Default
+        System.out.println(e.department);
+
+        // Protected
+        System.out.println(e.salary);
+
+        // Public
+        System.out.println(e.company);
+
+        System.out.println();
+
+        e.display();
+    }
+}
