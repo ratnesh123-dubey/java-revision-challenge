@@ -1,0 +1,33 @@
+#Run_Time Polymorphism
+
+class Test{
+
+    int a;
+    String name;
+
+    Test(int a, String name){
+        this.a=a;
+        this.name=name;
+    }
+
+    void display(int a){
+        System.out.println(a);
+    }
+
+    void display(String name){
+        System.out.println(name);
+    }
+
+}
+
+public class Main{
+
+    public static void main(String args[]){
+
+     Test t = new Test(5, "Ratnesh");
+
+     t.display(5);
+
+    }
+
+}
