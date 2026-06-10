@@ -1,0 +1,103 @@
+// Abstract class -> Abstraction
+abstract class Account {
+    protected String accountHolder;   // Access Modifier: protected
+    protected double balance;
+
+    // Constructor
+    public Account(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;  // this keyword
+        this.balance = balance;
+    }
+
+    // Abstract method
+    abstract void showAccountType();
+
+    // Common method
+    public void displayBalance() {
+        System.out.println("Holder: " + accountHolder);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+// Inheritance -> SavingsAccount extends Account
+class SavingsAccount extends Account {
+
+    public SavingsAccount(String accountHolder, double balance) {
+        super(accountHolder, balance); // super keyword
+    }
+
+    @Override  // Method Overriding + Polymorphism
+    void showAccountType() {
+        System.out.println("Savings Account");
+    }
+
+    // Method Overloading (same method name, different parameters)
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    public void deposit(double amount, String note) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + " | Note: " + note);
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+    }
+}
+
+// Another subclass -> CurrentAccount (Polymorphism example)
+class CurrentAccount extends Account {
+
+    public CurrentAccount(String accountHolder, double balance) {
+        super(accountHolder, balance);
+    }
+
+    @Override
+    void showAccountType() {
+        System.out.println("Current Account");
+    }
+
+    public void overdraftLimit() {
+        System.out.println("Overdraft limit is 50,000");
+    }
+}
+
+// Main class -> Object creation
+public class Main {
+    public static void main(String[] args) {
+
+        // Class & Object
+        Account acc1 = new SavingsAccount("Ratnesh", 5000);
+        Account acc2 = new CurrentAccount("Aman", 10000);
+
+        // Polymorphism (runtime)
+        acc1.showAccountType();
+        acc1.displayBalance();
+
+        System.out.println();
+
+        acc2.showAccountType();
+        acc2.displayBalance();
+
+        System.out.println("\n--- Savings Account Operations ---");
+
+        SavingsAccount s1 = new SavingsAccount("Ratnesh", 5000);
+        s1.deposit(1000);
+        s1.deposit(500, "Salary");
+        s1.withdraw(2000);
+        s1.displayBalance();
+    }
+}
+
+
+
+
+
+
