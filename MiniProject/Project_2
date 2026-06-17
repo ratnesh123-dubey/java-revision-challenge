@@ -1,0 +1,180 @@
+// Parent Class (Inheritance)
+class Person {
+
+    // Access Modifier + Encapsulation
+    private String name;
+    protected int age;
+
+
+    // Constructor
+    Person(String name, int age) {
+
+        this.name = name;   // this keyword
+        this.age = age;
+    }
+
+
+    // Encapsulation (Getter)
+    public String getName() {
+
+        return name;
+    }
+
+
+    // Method Overloading
+    public void displayInfo() {
+
+        System.out.println("Name: " + name);
+    }
+
+
+    public void displayInfo(int age) {
+
+        System.out.println("Age: " + age);
+    }
+
+}
+
+
+
+// Abstraction using Interface
+interface CustomerService {
+
+    void customerType();
+
+}
+
+
+
+
+// Inheritance + Interface Implementation
+class Customer extends Person implements CustomerService {
+
+
+    // Encapsulation
+    private int customerId;
+    private double balance;
+
+
+
+    // Constructor
+    Customer(int customerId, String name, int age, double balance) {
+
+
+        // super keyword
+        super(name, age);
+
+
+        // this keyword
+        this.customerId = customerId;
+        this.balance = balance;
+    }
+
+
+
+    // Setter
+    public void setBalance(double balance) {
+
+        this.balance = balance;
+    }
+
+
+
+    // Getter
+    public double getBalance() {
+
+        return balance;
+    }
+
+
+
+
+    // Method Overriding
+    @Override
+    public void customerType() {
+
+        System.out.println("Regular Customer");
+    }
+
+
+
+
+
+    // Runtime Polymorphism
+    @Override
+    public void displayInfo() {
+
+
+        System.out.println(
+                "Customer ID: " + customerId +
+                " Name: " + getName() +
+                " Balance: " + balance
+        );
+    }
+
+}
+
+
+
+
+public class Main {
+
+
+    public static void main(String[] args) {
+
+
+
+        // Object Creation
+        Customer c1 = new Customer(
+                101,
+                "Ratnesh",
+                25,
+                5000
+        );
+
+
+
+        // Overriding method
+        c1.displayInfo();
+
+
+
+        // Method Overloading
+        c1.displayInfo(25);
+
+
+
+
+        // Encapsulation
+        c1.setBalance(10000);
+
+
+        System.out.println(
+                "Updated Balance: " + c1.getBalance()
+        );
+
+
+
+
+        // Abstraction
+        c1.customerType();
+
+
+
+
+
+        // Runtime Polymorphism
+        Person p = new Customer(
+                102,
+                "Rahul",
+                30,
+                8000
+        );
+
+
+        p.displayInfo();
+
+
+    }
+
+}
