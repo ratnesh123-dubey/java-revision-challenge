@@ -1,0 +1,37 @@
+class InvalidAgeException extends RuntimeException {
+
+
+    InvalidAgeException(String message){
+
+        super(message);
+    }
+}
+
+class VotingSystem {
+
+
+    void checkAge(int age){
+
+        if(age < 18){
+
+            throw new InvalidAgeException(
+                "Not eligible for voting"
+            );
+        }
+
+        System.out.println("Eligible");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        VotingSystem v = new VotingSystem();
+
+
+        v.checkAge(15);
+
+    }
+}
