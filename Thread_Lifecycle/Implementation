@@ -1,0 +1,39 @@
+class MyThread extends Thread {
+    public void run() {
+        try {
+            System.out.println("Thread is running...");
+
+            // TIMED_WAITING state
+            Thread.sleep(2000);
+
+            System.out.println("Thread work done...");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+public class ThreadLifecycleDemo {
+    public static void main(String[] args) throws InterruptedException {
+
+        MyThread t1 = new MyThread();
+
+        // NEW state
+        System.out.println("State after creation: " + t1.getState());
+
+        t1.start();
+
+        // RUNNABLE state (may vary)
+        System.out.println("State after start: " + t1.getState());
+
+        // wait so thread can finish
+        Thread.sleep(500);
+
+        System.out.println("Intermediate state: " + t1.getState());
+
+        t1.join(); // WAITING main thread
+
+        // TERMINATED state
+        System.out.println("Final state: " + t1.getState());
+    }
+}
