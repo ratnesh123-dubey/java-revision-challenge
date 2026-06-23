@@ -3,7 +3,7 @@ class MyThread extends Thread {
         try {
             System.out.println("Thread is running...");
 
-            // TIMED_WAITING state
+            // TIMED_WAITING state...
             Thread.sleep(2000);
 
             System.out.println("Thread work done...");
