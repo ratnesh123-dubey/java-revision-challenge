@@ -1,7 +1,7 @@
 
 @FunctionalInterface
 interface Demo {
-    void show();
+    void show(); //only one abstract method
 }
 
 class Test {
