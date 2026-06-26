@@ -1,0 +1,71 @@
+
+// 1.Reference to a Static Method
+import java.util.*;
+
+class MathUtil{
+    static void square(int n) {
+        System.out.println(n * n);
+    }
+}
+
+class GFG{
+    public static void main(String[] args) {
+
+        List<Integer> list = Arrays.asList(2, 3, 4);
+        list.forEach(MathUtil::square);
+    }
+}
+
+
+// 2.Reference to an Instance Method of a Particular Object
+import java.util.*;
+
+class Printer{
+    void print(String msg) {
+        System.out.println(msg);
+    }
+}
+
+class GFG{
+    public static void main(String[] args) {
+
+        Printer printer = new Printer();
+        List<String> data = Arrays.asList("Java", "Spring", "Boot");
+
+        data.forEach(printer::print);
+    }
+}
+
+
+// 3.Reference to an Instance Method of an Arbitrary Object
+import java.util.*;
+
+class GFG{
+    
+    public static void main(String[] args){
+
+        List<String> names = Arrays.asList("java", "spring", "microservice");
+
+        names.stream()
+             .map(String::toUpperCase)
+             .forEach(System.out::println);
+    }
+}
+
+
+//4. Reference to a Constructor
+import java.util.function.Supplier;
+
+class Student {
+    Student() {
+        System.out.println("Student object created");
+    }
+}
+
+class GFG{
+    public static void main(String[] args) {
+
+        Supplier<Student> supplier = Student::new;
+        supplier.get();
+    }
+}
