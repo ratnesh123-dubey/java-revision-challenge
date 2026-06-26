@@ -1,0 +1,90 @@
+
+// Default and Static Methods (Java 8)
+
+
+interface Payment {
+
+
+    // Abstract method
+    void pay();
+
+
+
+    // Default method (Java 8)
+    default void refund() {
+
+        System.out.println("Default refund process");
+    }
+
+
+
+    // Static method (Java 8)
+    static void transactionInfo() {
+
+        System.out.println("Payment transaction");
+    }
+}
+
+
+
+class UPI implements Payment {
+
+
+    public void pay() {
+
+        System.out.println("UPI payment done");
+    }
+
+
+
+    // overriding default method
+
+    public void refund() {
+
+        System.out.println("UPI refund done");
+    }
+}
+
+
+
+class Card implements Payment {
+
+
+    public void pay() {
+
+        System.out.println("Card payment done");
+    }
+
+    // using default refund()
+}
+
+
+
+public class Main {
+
+
+    public static void main(String[] args) {
+
+
+        UPI u = new UPI();
+
+        u.pay();
+
+        u.refund();
+
+
+
+        Card c = new Card();
+
+        c.pay();
+
+        c.refund();
+
+
+
+        // calling static method
+
+        Payment.transactionInfo();
+
+    }
+}
