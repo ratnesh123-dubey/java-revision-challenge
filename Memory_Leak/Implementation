@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class MemoryLeakExample {
+
+    private static List<Object> list = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        while (true) {
+            Object obj = new Object();
+
+            // Object is continuously added
+            // but never removed
+            list.add(obj);
+        }
+    }
+}
